@@ -2,4 +2,4 @@
 
 This is a demo for the you-tube web component hosted on npm
 
-### [LIVE LINK](https://github.com/Niklus/you-tube-demo)
+### [LIVE LINK](https://niklus.github.io/you-tube-demo/)
