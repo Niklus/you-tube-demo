@@ -57,9 +57,9 @@
     ></you-tube>
 
     <!--
-      You can stop here if all you need is a video in your website
-      if you want the controls on the video set controls="1"
-      if you need to customize and access the player object, read on
+      You can stop here if all you need is a YouTube player in your website.
+      If you want the controls on the player set controls="1".
+      If you need to customize and access the player object, read on.
     -->
 
     <br />
@@ -74,11 +74,11 @@
     </button>
 
     <script>
-      // The player
+      // The player object
       let player;
-      let yt = document.querySelector("you-tube");
+      const yt = document.querySelector("you-tube");
 
-      // Access player obj on the playerReady event
+      // Access player object on the playerReady event
       yt.playerReady = (evt) => (player = evt.target);
 
       // Some simple operations
@@ -95,7 +95,7 @@
         id ? player.loadVideoById(id) : null;
       }
 
-      /***All Events****/
+      /****All Events****/
       /*
         yt.playerReady = (evt) => {} -- we used this above to access the player
         yt.playerStateChange = (evt) => {}
