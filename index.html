@@ -34,7 +34,11 @@
             display: none;
           }
         }
-        
+      
+      Note: If you hide the video while it is playing, it continues to play in the background. To address this you 
+      need a little javascript. Detect the screen dimensions using window.onresize event and pause or stop the
+      video using the player object. See how to do this below. 
+      You should also disable autoplay in the case your users will come directly from a mobile phone whilst player is hidden. autoplay="0" 
       */
     </style>
   </head>
@@ -59,6 +63,7 @@
     <!--
       You can stop here if all you need is a YouTube player in your website.
       If you want the controls on the player set controls="1".
+      If you don't want it to autoplay set autoplay="0".
       If you need to customize and access the player object, read on.
     -->
 
@@ -95,9 +100,18 @@
         id ? player.loadVideoById(id) : null;
       }
 
+      /***If you are using a media query to hide the video ***/
+      /*
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 600) {
+          player.pauseVideo();
+        }
+      });
+      */
+
       /****All Events****/
       /*
-        yt.playerReady = (evt) => {} -- we used this above to access the player
+        yt.playerReady = (evt) => {} -- we used this above to access the player object
         yt.playerStateChange = (evt) => {}
         yt.playbackQualityChange = (evt) => {}
         yt.playbackRateChange = (evt) => {}
