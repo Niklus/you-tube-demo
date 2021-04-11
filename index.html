@@ -84,7 +84,9 @@
       const yt = document.querySelector("you-tube");
 
       // Access player object on the playerReady event
-      yt.playerReady = (evt) => (player = evt.target);
+      yt.playerReady = (evt) => {
+        player = evt.target;
+      };
 
       // Some simple operations
       function play() {
